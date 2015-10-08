@@ -15,9 +15,8 @@ install:
 addons:
     apt:
         packages:
-            - gcc-4.8
-            - g++-4.8
-            - clang
+            - g++-5
+            - clang-3.8
             - libc++-dev
 
 script:
