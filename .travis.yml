@@ -10,6 +10,9 @@ compiler:
   - gcc
 
 script:
-  - cmake .
-  - cd src
+  - cmake --version
+  - which cmake
+  - mkdir build
+  - cd build
+  - cmake ..
   - make VERBOSE=1
