@@ -13,9 +13,5 @@ compiler:
 script:
   - mkdir build
   - cd build
-  - ls $HOME/cmake/
-  - ls $HOME/cmake/*/
-  - ls $HOME/cmake/*/bin
-  - find $HOME/cmake
   - $HOME/cmake/*/bin/cmake ..
   - make VERBOSE=1
