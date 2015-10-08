@@ -19,7 +19,7 @@
 
 #include "GPXState.h"
 
-#include <cassert>
+#include <assert.h>
 #include <ctime>
 
 #include "Airspace.h"

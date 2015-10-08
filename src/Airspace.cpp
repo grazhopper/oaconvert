@@ -17,7 +17,7 @@
   along with oaconvert.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <cassert>
+#include <assert.h>
 #include <cmath>
 #include <iostream>
 #include <string>
