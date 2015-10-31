@@ -7,16 +7,21 @@ compiler:
   - clang
   - gcc
 
+os:
+  - linux
+  - osx
+
 before_install:
-  - if [ "$CC" = "clang" ]; then 
-      sudo apt-get update -qq;
-      sudo apt-get install -y libc++1 libc++-dev; 
+  - if [ "TRAVIS_OS_NAME" = "linux" ]; then
+        if [ "$CC" = "clang" ]; then 
+          sudo apt-get update -qq;
+          sudo apt-get install -y libc++1 libc++-dev; 
+        fi;
     fi
 
 script:
   - mkdir build
   - cd build
-  - cat /home/travis/build.sh
   - cmake --version
   - cmake ..
   - make VERBOSE=1
