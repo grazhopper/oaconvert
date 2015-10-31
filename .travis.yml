@@ -12,7 +12,7 @@ before_install:
 #  - sudo dpkg -l "llvm-3.7"
   - (mkdir $HOME/cmake && cd $HOME/cmake && wget http://cmake.org/files/v3.4/cmake-3.4.0-rc1-Linux-x86_64.tar.gz && tar zxf cmake-*.tar.gz)
 #  - if [ "$CXX" = "clang" ]; then export CXX="clang++-3.7" CC="clang-3.7"; fi
-  - if [ "$CXX" = "clang" ]; then sudo apt-get install -y libc++-dev; fi
+  - if [ "$CXX" = "clang" ]; then sudo apt-get install -y libc++1 libc++-dev; fi
 
 #install:
 #  - sudo apt-get update -qq
