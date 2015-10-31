@@ -6,15 +6,15 @@ language: cpp
 compiler:
   - clang
   - gcc
-  - clang-3.6
+  - bla
 
 before_install:
   - sudo apt-get update -qq
 #  - sudo dpkg -l "llvm-3.7"
-  - (mkdir $HOME/cmake && cd $HOME/cmake && wget http://cmake.org/files/v3.4/cmake-3.4.0-rc1-Linux-x86_64.tar.gz && tar zxf cmake-*.tar.gz)
+#  - (mkdir $HOME/cmake && cd $HOME/cmake && wget http://cmake.org/files/v3.4/cmake-3.4.0-rc1-Linux-x86_64.tar.gz && tar zxf cmake-*.tar.gz)
 #  - if [ "$CXX" = "clang" ]; then export CXX="clang++-3.7" CC="clang-3.7"; fi
   - if [ "$CC" = "clang" ]; then sudo apt-get install -y libc++1 libc++-dev; fi
-  - if [ "$CC" = "clang-3.6" ]; then sudo apt-get install -y llvm-3.6 libc++1; fi
+    #  - if [ "$CC" = "clang-3.6" ]; then sudo apt-get install -y llvm-3.6 libc++1; export CXX="clang++-3.6" CC="clang-3.6"; fi
 
 #install:
 #  - sudo apt-get update -qq
@@ -33,7 +33,6 @@ before_install:
 script:
   - mkdir build
   - cd build
-  - ls -l /usr/lib/*/libc++*
   - $HOME/cmake/*/bin/cmake --version
   - $HOME/cmake/*/bin/cmake ..
   - make VERBOSE=1
