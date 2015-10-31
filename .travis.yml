@@ -1,4 +1,5 @@
-#sudo: false
+sudo: required
+dist: trusty
 
 language: cpp
 
@@ -8,9 +9,9 @@ compiler:
 
 before_install:
   - sudo apt-get update -qq
-  - sudo dpkg -l "llvm-3.7"
-  - (mkdir $HOME/cmake && cd $HOME/cmake && wget http://cmake.org/files/v3.4/cmake-3.4.0-rc1-Linux-x86_64.tar.gz && tar zxf cmake-*.tar.gz)
-  - if [ "$CXX" = "clang" ]; then export CXX="clang++-3.7" CC="clang-3.7"; fi
+#  - sudo dpkg -l "llvm-3.7"
+#  - (mkdir $HOME/cmake && cd $HOME/cmake && wget http://cmake.org/files/v3.4/cmake-3.4.0-rc1-Linux-x86_64.tar.gz && tar zxf cmake-*.tar.gz)
+#  - if [ "$CXX" = "clang" ]; then export CXX="clang++-3.7" CC="clang-3.7"; fi
 
 #install:
 #  - sudo apt-get update -qq
@@ -27,9 +28,10 @@ before_install:
 #            - libc++-dev
 
 script:
-    - mkdir build
-    - cd build
-    - g++ --version
-    - $HOME/cmake/*/bin/cmake --version
-    - $HOME/cmake/*/bin/cmake ..
-    - make VERBOSE=1
+  - mkdir build
+  - cd build
+  - g++ --version
+  - clang++ --version
+  - $HOME/cmake/*/bin/cmake --version
+  - $HOME/cmake/*/bin/cmake ..
+  - make VERBOSE=1
